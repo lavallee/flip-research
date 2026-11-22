@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flip-research"
+version = "0.1.0"
+description = "A small, honest default for flip's research role: find sources, ask with verified quotes"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Marc Lavallee" }]
+keywords = ["flip", "research", "search", "citations", "journalism"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Documentation",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/lavallee/flip-research"
+Repository = "https://github.com/lavallee/flip-research"
+Issues = "https://github.com/lavallee/flip-research/issues"
+
+[project.scripts]
+flip-research = "flip_research.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flip_research"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100

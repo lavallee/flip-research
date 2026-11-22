@@ -1,0 +1,10 @@
+[plugin]
+id = "lavallee/research"
+version = "0.1.0"
+summary = "A keyless-by-default find/ask/verify command for flip's [research] role."
+license = "MIT"
+requires_flip = ">=0.25"
+capabilities = ["definitions"]
+
+[exports]
+docs = ["README.md"]
